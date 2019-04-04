@@ -1,0 +1,7 @@
+
+find */ProgressNotes -type f -size 0 | wc -l
+
+PS Microsoft.PowerShell.Core\FileSystem::\\DOME\Shared\Directions Central\Mastercare Development\MastercareImplementation\DataforMigration\DocumentsMigration\CC_DOCS_EXTRACT\Patients> gci -re -in *\ProgressNotes\*.rtf | select name, length | where-object {$_.length -eq 0 } | measure-object
+
+
+gci -re -in *.rtf | select name, length  | where-object {$_.length -eq 0 } | measure-object
